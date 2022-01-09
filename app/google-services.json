@@ -1,0 +1,90 @@
+{
+  "project_info": {
+    "project_number": "422864283094",
+    "project_id": "fir-example-39f63",
+    "storage_bucket": "fir-example-39f63.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:422864283094:android:af6572d9a77cc1d6363077",
+        "android_client_info": {
+          "package_name": "com.example.firebaselogin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "422864283094-4315s48528mblgpuspkh3tlh1hsu0up0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.firebaselogin",
+            "certificate_hash": "a46704a607a9119034932aae83135511cae65d29"
+          }
+        },
+        {
+          "client_id": "422864283094-mjfc1dn2e4mq11qv07d2fundhusb24k4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDDhSA2BmPqfoLmQZK5kOPdd6r18QULfqM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "422864283094-mjfc1dn2e4mq11qv07d2fundhusb24k4.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "422864283094-eunpv0gj9b1ke9vilq4m63cp568pd2j4.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "Cicimaya.FirebaseChat"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:422864283094:android:c7a28cb945d1f821363077",
+        "android_client_info": {
+          "package_name": "com.example.kotlinchat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "422864283094-mjfc1dn2e4mq11qv07d2fundhusb24k4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDDhSA2BmPqfoLmQZK5kOPdd6r18QULfqM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "422864283094-mjfc1dn2e4mq11qv07d2fundhusb24k4.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "422864283094-eunpv0gj9b1ke9vilq4m63cp568pd2j4.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "Cicimaya.FirebaseChat"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
