@@ -1,13 +1,17 @@
-package com.example.kotlinchat
+package com.example.kotlinchat.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.KeyEvent
 import android.widget.EditText
 import android.widget.ImageView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
+import com.example.kotlinchat.adapter.*
+import com.example.kotlinchat.model.*
+import com.example.kotlinchat.R
 
 class ChatActivity : AppCompatActivity() {
 
@@ -16,7 +20,7 @@ class ChatActivity : AppCompatActivity() {
     private lateinit var ivSend: ImageView
     private lateinit var adapter: MessageAdapter
     private lateinit var messages: ArrayList<Message>
-    private var dbRef = FirebaseDatabase.getInstance().getReference()
+    private var dbRef = FirebaseDatabase.getInstance().reference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,7 +31,7 @@ class ChatActivity : AppCompatActivity() {
         ivSend = findViewById(R.id.ivSend)
 
         val receiverName = intent.getStringExtra("name")
-        val receiverUid = intent.getStringExtra("uid")
+        val receiverUid = intent.getStringExtra("uid")!!
         val senderUid = FirebaseAuth.getInstance().currentUser?.uid!!
 
         supportActionBar?.title = receiverName
@@ -38,16 +42,7 @@ class ChatActivity : AppCompatActivity() {
         messagesView.adapter = adapter
 
         ivSend.setOnClickListener {
-            val messageText = etMessage.text.toString()
-            val message = Message(messageText, senderUid)
-
-            dbRef.child("chats").child(senderUid + receiverUid).child("messages").push()
-                .setValue(message).addOnCompleteListener {
-                    dbRef.child("chats").child(receiverUid + senderUid).child("messages").push()
-                        .setValue(message)
-                }
-
-            etMessage.setText("")
+            sendMessage(senderUid, receiverUid)
         }
 
         dbRef.child("chats").child(senderUid + receiverUid).child("messages")
@@ -63,14 +58,24 @@ class ChatActivity : AppCompatActivity() {
                     adapter.notifyDataSetChanged()
                 }
 
-                override fun onCancelled(error: DatabaseError) {
-
-                }
-
+                override fun onCancelled(error: DatabaseError) {}
             })
     }
 
-    fun addMessage() {
+    private fun sendMessage(senderUid: String, receiverUid: String) {
+        val messageText = etMessage.text.toString()
+        if (messageText.isBlank()) {
+            return
+        }
 
+        val message = Message(messageText, senderUid)
+
+        dbRef.child("chats").child(senderUid + receiverUid).child("messages").push()
+            .setValue(message).addOnCompleteListener {
+                dbRef.child("chats").child(receiverUid + senderUid).child("messages").push()
+                    .setValue(message)
+            }
+
+        etMessage.setText("")
     }
 }

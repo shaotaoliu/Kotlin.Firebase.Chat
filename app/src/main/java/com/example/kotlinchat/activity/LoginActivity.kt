@@ -1,4 +1,4 @@
-package com.example.kotlinchat
+package com.example.kotlinchat.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
+import com.example.kotlinchat.R
 
 class LoginActivity : AppCompatActivity() {
 
@@ -28,6 +29,9 @@ class LoginActivity : AppCompatActivity() {
         btnSignUp = findViewById(R.id.btnSignUp)
         auth = FirebaseAuth.getInstance()
         etEmail.setText(intent.getStringExtra("email"))
+
+        etEmail.setText("kevin@example.com")
+        etPassword.setText("1234567890")
 
         btnSignUp.setOnClickListener {
             val intent = Intent(this, SignUpActivity::class.java)

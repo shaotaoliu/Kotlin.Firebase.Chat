@@ -1,16 +1,17 @@
-package com.example.kotlinchat
+package com.example.kotlinchat.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.ContextMenu
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
+import com.example.kotlinchat.adapter.*
+import com.example.kotlinchat.model.*
+import com.example.kotlinchat.R
 
 class MainActivity : AppCompatActivity() {
 

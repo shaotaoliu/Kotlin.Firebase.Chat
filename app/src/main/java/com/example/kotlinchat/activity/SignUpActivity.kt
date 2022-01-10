@@ -1,4 +1,4 @@
-package com.example.kotlinchat
+package com.example.kotlinchat.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -9,6 +9,8 @@ import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.example.kotlinchat.model.*
+import com.example.kotlinchat.R
 
 class SignUpActivity : AppCompatActivity() {
 

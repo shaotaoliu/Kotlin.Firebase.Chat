@@ -1,4 +1,4 @@
-package com.example.kotlinchat
+package com.example.kotlinchat.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
+import com.example.kotlinchat.model.*
+import com.example.kotlinchat.R
 
 class MessageAdapter(val context: Context, val messages: ArrayList<Message>): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
