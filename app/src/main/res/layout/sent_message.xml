@@ -6,15 +6,55 @@
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/sent_message_background">
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="5dp"
+        android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/tvSentMessage"
+            android:id="@+id/tvSenderInitial"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/chatter_icon_background"
+            android:layout_marginLeft="5dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:gravity="center"
+            android:textSize="16dp"
+            android:textColor="@color/white"
+            android:text="Me"/>
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:textSize="18dp"
-            android:text="Sent message"/>
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@id/tvSenderInitial"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvSentMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/sent_message_background"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="6dp"
+                android:layout_marginTop="2dp"
+                android:textSize="16dp"
+                android:text="Hi Jason, how are you? long time no see. Where have you been?"/>
+
+            <TextView
+                android:id="@+id/tvSentDt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginTop="2dp"
+                android:textSize="14dp"
+                android:text="10:15"/>
+
+        </LinearLayout>
 
     </RelativeLayout>
+
 </RelativeLayout>

@@ -4,8 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable/btn_background.xml" value="0.33229166666666665" />
+        <entry key="app/src/main/res/drawable/chatter_icon_background.xml" value="0.3854166666666667" />
         <entry key="app/src/main/res/drawable/message_background.xml" value="0.33229166666666665" />
         <entry key="app/src/main/res/drawable/received_message_background.xml" value="0.33229166666666665" />
+        <entry key="app/src/main/res/drawable/receiver_icon_background.xml" value="0.3854166666666667" />
         <entry key="app/src/main/res/drawable/sent_message_background.xml" value="0.33229166666666665" />
         <entry key="app/src/main/res/drawable/user_icon_background.xml" value="0.5796875" />
         <entry key="app/src/main/res/layout/activity_chat.xml" value="0.31614583333333335" />

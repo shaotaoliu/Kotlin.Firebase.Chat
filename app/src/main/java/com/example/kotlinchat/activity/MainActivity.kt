@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         users = ArrayList()
         adapter = UserAdapter(this, users)
         auth = FirebaseAuth.getInstance()
-        dbRef = FirebaseDatabase.getInstance().getReference()
+        dbRef = FirebaseDatabase.getInstance().reference
 
         rvUsers = findViewById(R.id.rvUsers)
         rvUsers.layoutManager = LinearLayoutManager(this)
@@ -48,9 +48,7 @@ class MainActivity : AppCompatActivity() {
                 adapter.notifyDataSetChanged()
             }
 
-            override fun onCancelled(error: DatabaseError) {
-
-            }
+            override fun onCancelled(error: DatabaseError) {}
         })
     }
 
