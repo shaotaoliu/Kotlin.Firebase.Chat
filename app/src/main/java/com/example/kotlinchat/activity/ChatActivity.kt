@@ -58,6 +58,10 @@ class ChatActivity : AppCompatActivity() {
                     }
 
                     adapter.notifyDataSetChanged()
+
+                    messagesView.post {
+                        messagesView.scrollToPosition(messages.size - 1)
+                    }
                 }
 
                 override fun onCancelled(error: DatabaseError) {}
@@ -79,10 +83,6 @@ class ChatActivity : AppCompatActivity() {
             .setValue(sendMessage).addOnCompleteListener {
                 dbRef.child("chats").child(receiverUid + senderUid).child("messages").push()
                     .setValue(receivedMessage)
-
-//                messagesView.post {
-//                    messagesView.sc
-//                }
             }
 
         etMessage.setText("")
