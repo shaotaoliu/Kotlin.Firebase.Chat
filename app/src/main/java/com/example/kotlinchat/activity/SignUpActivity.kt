@@ -3,6 +3,7 @@ package com.example.kotlinchat.activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -36,7 +37,7 @@ class SignUpActivity : AppCompatActivity() {
         btnLogin = findViewById(R.id.btnLogin)
         btnSignUp = findViewById(R.id.btnSignUp)
         auth = FirebaseAuth.getInstance()
-        dbRef = FirebaseDatabase.getInstance().getReference()
+        dbRef = FirebaseDatabase.getInstance().reference
 
         btnSignUp.setOnClickListener {
             val username = etUsername.text.toString()
@@ -97,6 +98,10 @@ class SignUpActivity : AppCompatActivity() {
     }
 
     private fun addUserToFirestore(name: String, email: String, uid: String) {
-        dbRef.child("users").child(uid).setValue(User(name, email, uid))
+        dbRef.child("users").child(uid).setValue(User(name, email, uid)).addOnSuccessListener {
+            Log.i("Firebase", "Data saved")
+        }.addOnFailureListener {
+            Log.e("Firebase", "Error", it)
+        }
     }
 }
