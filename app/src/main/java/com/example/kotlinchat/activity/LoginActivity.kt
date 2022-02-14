@@ -30,9 +30,6 @@ class LoginActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
         etEmail.setText(intent.getStringExtra("email"))
 
-        etEmail.setText("kevin@example.com")
-        etPassword.setText("1234567890")
-
         btnSignUp.setOnClickListener {
             val intent = Intent(this, SignUpActivity::class.java)
             startActivity(intent)
